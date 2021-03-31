@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
-const MongoStore = require('connect-mongo')(session);
+
 require('dotenv').config();
 const flash = require('connect-flash');
-const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
+
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session);
 
 const app = express(); 
 
@@ -30,11 +32,15 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
 // Express Session 
+app.set('trust proxy', 1);
 app.use(session({
-    secret: process.env.SESSION_SECRET, 
-    store: new MongoStore(options),
-    resave: true,
-    saveUninitialized: true
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    unset: 'destroy',
+        cookie: { secure: true,
+                maxAge:  6*60*60*1000 },
+        store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 // Passport middleware 
