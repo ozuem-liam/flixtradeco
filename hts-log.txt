@@ -1,0 +1,18 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 29 Mar 2021 05:17:53 at https://uniquetrade.co/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://uniquetrade.co/ -O1 "C:\Users\TREYBEELZ\Desktop\flixtrade.co" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+05:19:18	Error: 	"Forbidden" (403) at link translate.google.com/translate_a/element.js?cb=googleTranslateElementInit (from https://uniquetrade.co/)
+05:19:37	Warning: 	File not parsed, looks like binary: https://uniquetrade.co/fontawesome-free-5.0.6/web-fonts-with-css/webfonts/fa-brands-400.html
+05:19:37	Warning: 	Warning: store application/octet-stream without scan: C:/Users/TREYBEELZ/Desktop/flixtrade.co/uniquetrade.co/fontawesome-free-5.0.6/web-fonts-with-css/webfonts/fa-brands-400.html
+05:19:38	Warning: 	File not parsed, looks like binary: https://uniquetrade.co/fontawesome-free-5.0.6/web-fonts-with-css/webfonts/fa-regular-400.html
+05:19:38	Warning: 	Warning: store application/octet-stream without scan: C:/Users/TREYBEELZ/Desktop/flixtrade.co/uniquetrade.co/fontawesome-free-5.0.6/web-fonts-with-css/webfonts/fa-regular-400.html
+05:19:38	Warning: 	File not parsed, looks like binary: https://uniquetrade.co/fontawesome-free-5.0.6/web-fonts-with-css/webfonts/fa-solid-900.html
+05:19:38	Warning: 	Warning: store application/octet-stream without scan: C:/Users/TREYBEELZ/Desktop/flixtrade.co/uniquetrade.co/fontawesome-free-5.0.6/web-fonts-with-css/webfonts/fa-solid-900.html
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 52 seconds : 79 links scanned, 77 files written (3370017 bytes overall) [2434228 bytes received at 21734 bytes/sec], 1547837 bytes transferred using HTTP compression in 27 files, ratio 37%
+(1 errors, 6 warnings, 0 messages)

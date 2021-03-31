@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+uniquetrade.co	TRUE	/	FALSE	1999999999	CameFrom	deleted
+uniquetrade.co	TRUE	/	FALSE	1999999999	PHPSESSID	ujl3uaq7ighge58j9rf7la5j77
+
