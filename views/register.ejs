@@ -39,10 +39,10 @@
             </div>
                         <div class="button bounceInRight animated wow"data-wow-duration="2s">
                                 <div class="button_one">
-                    <a href="login.html?a=login" class="a-link"><i class="fas fa-unlock"></i> Log In </a>
+                    <a href="/users/login" class="a-link"><i class="fas fa-unlock"></i> Log In </a>
                 </div>
                 <div class="button_two">
-                    <a href="register.html?a=signup" class="a-link"><i class="fas fa-user-plus"></i> Register  </a>
+                    <a href="/users/register" class="a-link"><i class="fas fa-user-plus"></i> Register  </a>
                 </div>
                             </div>
 							        </div>
@@ -91,47 +91,47 @@ s0.parentNode.insertBefore(s1,s0);
  
 
  <script language=javascript>
- function checkform() {
-  if (document.regform.fullname.value == '') {
-    alert("Please enter your full name!");
-    document.regform.fullname.focus();
-    return false;
-  }
+//  function checkform() {
+//   if (document.regform.fullname.value == '') {
+//     alert("Please enter your full name!");
+//     document.regform.fullname.focus();
+//     return false;
+//   }
  
   
-  if (document.regform.username.value == '') {
-    alert("Please enter your username!");
-    document.regform.username.focus();
-    return false;
-  }
-  if (document.regform.password.value == '') {
-    alert("Please enter your password!");
-    document.regform.password.focus();
-    return false;
-  }
-  if (document.regform.password.value != document.regform.password2.value) {
-    alert("Please check your password!");
-    document.regform.password2.focus();
-    return false;
-  }
+//   if (document.regform.username.value == '') {
+//     alert("Please enter your username!");
+//     document.regform.username.focus();
+//     return false;
+//   }
+//   if (document.regform.password.value == '') {
+//     alert("Please enter your password!");
+//     document.regform.password.focus();
+//     return false;
+//   }
+//   if (document.regform.password.value != document.regform.password2.value) {
+//     alert("Please check your password!");
+//     document.regform.password2.focus();
+//     return false;
+//   }
  
   
-  if (document.regform.email.value == '') {
-    alert("Please enter your e-mail address!");
-    document.regform.email.focus();
-    return false;
-  }
-  if (document.regform.email.value != document.regform.email1.value) {
-    alert("Please retype your e-mail!");
-    document.regform.email.focus();
-    return false;
-  }
-  if (document.regform.agree.checked == false) {
-    alert("You have to agree with the Terms and Conditions!");
-    return false;
-  }
-  return true;
- }
+//   if (document.regform.email.value == '') {
+//     alert("Please enter your e-mail address!");
+//     document.regform.email.focus();
+//     return false;
+//   }
+//   if (document.regform.email.value != document.regform.email1.value) {
+//     alert("Please retype your e-mail!");
+//     document.regform.email.focus();
+//     return false;
+//   }
+//   if (document.regform.agree.checked == false) {
+//     alert("You have to agree with the Terms and Conditions!");
+//     return false;
+//   }
+//   return true;
+//  }
 
  function IsNumeric(sText) {
   var ValidChars = "0123456789";
@@ -146,52 +146,12 @@ s0.parentNode.insertBefore(s1,s0);
   }
   return IsNumber;
  }
-
-//  const form = document.getElementById('reg-form');
-//  if(form) {
-//     form.addEventListener('submit', registerUser)
-//  }
-
-//  // 1. Send data ass JSON (very common when you're using JS)
-//  // 2. send data as urlencode (very common when you're using JS)
-//  async function registerUser(event) {
-//      event.preventDefault()
-//      const fullname = document.getElementById('full-name').value
-//      const username = document.getElementById('user-name').value
-//      const email = document.getElementById('mail').value
-//      const email1 = document.getElementById('mail1').value
-//      const password = document.getElementById('pass').value
-//      const password2 = document.getElementById('pass2').value
-//      const secretquestion = document.getElementById('secretq').value
-//      const secretanswer = document.getElementById('secreta').value
-//      const wallet = document.getElementById('wallet').value
-
-//      const result = await fetch('/register', {
-//          method: 'POST',
-//          headers: {
-//              'Content-Type': 'application/json'
-//          },
-//          body: JSON.stringify({
-//              fullname,
-//              username,
-//              email,
-//              email1,
-//              password,
-//              password2,
-//              secretquestion,
-//              secretanswer,
-//              wallet
-//          })
-//      }).then((res) => res.json())
-
-//      console.log(result)
-//  }
  </script>
  
   
-  
-<!-- <form id="reg-form" method="POST" onsubmit="checkform()" name="regForm"> -->
-<form action="/user_create" method="POST">
+ <%- include ("./partials/messages"); %>
+<!-- <form id="reg-form" method="POST" onsubmit="return checkform()" name="regForm"> -->
+<form action="/users/register" method="POST">
     <!-- <input type="hidden" name="form_id" value="16169914955739">
     <input type="hidden" name="form_token" value="9d2fbb64de57160af602da6bb60f29c0">
     <input type="hidden" name="a" value="signup">
@@ -206,7 +166,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="full-name" type="text" placeholder="Full Name" name=fullname value="">
+                            <input id="name" type="text" placeholder="Full Name" name="name" 
+                            value="<%= typeof name != 'undefined' ? name : '' %>">
                         </div>
                         <div class="other-icon">
                             <img src="images/ruser.png">
@@ -219,7 +180,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="user-name" type="text" placeholder="Username" name=username value="">
+                            <input id="username" type="text" placeholder="Username" name="username" 
+                            value="<%= typeof username != 'undefined' ? username : '' %>">
                         </div>
                         <div class="other-icon">
                             <img src="images/ruser.png">
@@ -232,7 +194,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="mail" type="text" placeholder="Email" name=email value="">
+                            <input id="mail" type="text" placeholder="Email" name="email" 
+                            value="<%= typeof email != 'undefined' ? email : '' %>">
                         </div>
                         <div class="other-icon-mail">
                             <img src="images/rmail.png">
@@ -245,7 +208,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="mail1" type="text" placeholder="Retype Email" name=email1 value="">
+                            <input id="emailcheck" type="text" placeholder="Retype Email" 
+                            name="emailcheck" value="<%= typeof emailcheck != 'undefined' ? emailcheck : '' %>">
                         </div>
                         <div class="other-icon-mail">
                             <img src="images/rmail.png">
@@ -259,7 +223,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="pass" type="password" placeholder="Password" name=password value="">
+                            <input id="pass" type="password" placeholder="Password" name="password" 
+                            value="<%= typeof password != 'undefined' ? password : '' %>">
                         </div>
                         <div class="other-icon-mail">
                             <img src="images/rpass.png">
@@ -272,7 +237,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="pass2" type="password" placeholder="Retype Password" name=password2 value="">
+                            <input id="pass2" type="password" placeholder="Retype Password" name="passwordcheck" 
+                            value="<%= typeof passwordcheck != 'undefined' ? passwordcheck : '' %>">
                         </div>
                         <div class="other-icon-mail">
                             <img src="images/rpass.png">
@@ -285,7 +251,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="secretq" type="text" placeholder="Secret Question" name=sq value="">
+                            <input id="secretq" type="text" placeholder="Secret Question" name="secretquestion" 
+                            value="<%= typeof secretquestion != 'undefined' ? secretquestion : '' %>">
                         </div>
                         <div class="other-icon-sq">
                             <img src="images/sq.png">
@@ -298,7 +265,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="secreta" type="text" placeholder="Secret Answer" name=sa value="">
+                            <input id="secretanswer" type="text" placeholder="Secret Answer" name="secretanswer" 
+                            value="<%= typeof secretanswer != 'undefined' ? secretanswer : '' %>">
                         </div>
                         <div class="other-icon-mail">
                             <img src="images/sa.png">
@@ -319,7 +287,8 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="other-type-icon">
                     	<div class="other-type">
-                            <input id="wallet" type="text" name="pay_account[1006][Wallet Address]" value="">
+                            <input id="wallet" type="text" name="wallet" 
+                            value="<%= typeof wallet != 'undefined' ? wallet : '' %>">
                         </div>
                         <div class="other-icon-pay">
                             <img src="images/rpay.png">
@@ -334,7 +303,7 @@ s0.parentNode.insertBefore(s1,s0);
                                 <div class="clr"></div>
                 <div class="check-text">
                     <div class="check-box">
-                        <input type="checkbox" name=agree value=1 >
+                        <input type="checkbox" id="check" name="agree" value=1 >
                     </div>
                     <div class="agree">
                         <p>I have read  <span><a target="_blank" href="rules.html?a=rules"> Rules &amp; Agreement</a></span></p>
@@ -353,12 +322,12 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
             <div class="fo-menu">
                 <ul>
-                    <li><a href="index.html?a=home">  home</a></li>
-                    <li><a href="about.html?a=cust&amp;page=about-us">  about us</a></li>
-                    <li><a href="news.html?a=news">  news</a></li>
-                    <li><a href="faq.html?a=faq">  f.a.q</a></li>
-                    <li><a href="rules.html?a=rules">  terms &amp; Condition</a></li>
-                    <li><a href="contactus.html?a=support">  support</a></li>
+                    <li><a href="/">  home</a></li>
+                    <li><a href="/about">  about us</a></li>
+                    <li><a href="/news">  news</a></li>
+                    <li><a href="/faq">  f.a.q</a></li>
+                    <li><a href="/rules">  terms &amp; Condition</a></li>
+                    <li><a href="/contactus">  support</a></li>
                 </ul>
             </div>
             <div class="copyright">

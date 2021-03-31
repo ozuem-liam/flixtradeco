@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 
-<!-- Mirrored from flixtrade.co/?a=login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Mar 2021 04:19:18 GMT -->
+<!-- Mirrored from flixtrade.co/?a=forgot_password by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Mar 2021 04:19:45 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 <!----328 Visualhyip.com---->
@@ -39,26 +39,26 @@
             </div>
                         <div class="button bounceInRight animated wow"data-wow-duration="2s">
                                 <div class="button_one">
-                    <a href="login.html?a=login" class="a-link"><i class="fas fa-unlock"></i> Log In </a>
+                    <a href="/users/login" class="a-link"><i class="fas fa-unlock"></i> Log In </a>
                 </div>
                 <div class="button_two">
-                    <a href="register.html?a=signup" class="a-link"><i class="fas fa-user-plus"></i> Register  </a>
+                    <a href="/users/register" class="a-link"><i class="fas fa-user-plus"></i> Register  </a>
                 </div>
                             </div>
 							        </div>
         <div id="top_header">
             <div id="sub_top_header">
                 <div class="logo zoomIn animated wow" data-wow-duration="2s">
-                    <a href="indexbc14.html?a=home"><img src="logo.png"></a>
+                    <a href="/"><img src="logo.png"></a>
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a href="index.html?a=home">Home</a></li>
-                        <li><a href="about.html?a=cust&amp;page=about-us">About Us</a></li>
-                        <li><a href="news.html?a=news">News</a></li>
-                        <li><a href="faq.html?a=faq">F.A.Q.</a></li>
-                        <li><a href="rules.html?a=rules">Terms And Condition</a></li>
-                        <li><a href="contactus.html?a=support">Contact Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/faq">F.A.Q.</a></li>
+                        <li><a href="/rules">Terms And Condition</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +80,7 @@ s0.parentNode.insertBefore(s1,s0);
         
 <div id="sub_slid">
              <div class="headline">
-                 <p>LOG IN YOUR ACCOUNT</p>
+                 <p>Forgot your password</p>
             </div>
          </div>
     </div>
@@ -91,74 +91,61 @@ s0.parentNode.insertBefore(s1,s0);
 
 <script language=javascript>
 function checkform() {
-  if (document.mainform.username.value=='') {
-    alert("Please type your username!");
-    document.mainform.username.focus();
-    return false;
-  }
-  if (document.mainform.password.value=='') {
-    alert("Please type your password!");
-    document.mainform.password.focus();
+  if (document.forgotform.email.value == '') {
+    alert("Please type your username or email!");
+    document.forgotform.email.focus();
     return false;
   }
   return true;
 }
 </script>
 
+<h3>Forgot your password:</h3><br>
 
 
 
-<form action="/login" method=post name=mainform onsubmit="return checkform()">
-    <!-- <input type="hidden" name="form_id" value="16169914951582">
-    <input type="hidden" name="form_token" value="ad057f79874ba04257218d59c38e3684"> -->
-<!-- <input type=hidden name=a value='do_login'>
-<input type=hidden name=follow value=''>
-<input type=hidden name=follow_id value=''> -->
+
+<form method=post name=forgotform onsubmit="return checkform();"><input type="hidden" name="form_id" value="16169915738684"><input type="hidden" name="form_token" value="90f37d45c71914141708c957d7d26a19">
+<input type=hidden name=a value="forgot_password">
+<input type=hidden name=action value="forgot_password">
 <div class="login_box">
                 <div class="other-head-">
-                	<p style="text-align:center;">LOG INFO.</p>
+                	<p style="text-align:center;">USER INFO</p>
                 </div>
                 <div class="login_boxa">
                      <div class="other-one">
                         <div class="other-tittle">
-                            <p>your Username *</p>
+                            <p>username or e-mail *</p>
                         </div>
                         <div class="other-type-icona">
                             <div class="other-type typea">
-                                <input type="text" placeholder="Username" name=username value=''>
+                                <input type="text" placeholder="username or e-mail" name='email' value="">
                             </div>
                             <div class="other-icon">
                                 <img src="images/ruser.png">
                             </div>
                         </div>
                     </div>
-                     <div class="other-one">
-                        <div class="other-tittle">
-                            <p>Password *</p>
-                        </div>
-                        <div class="other-type-icona">
-                            <div class="other-type typea">
-                                <input type="password" placeholder="password" name=password value=''>
-                            </div>
-                            <div class="other-icon">
-                                <img src="images/rpass.png">
-                            </div>
-                        </div>
-                    </div>
                     
                     <div class="clr"></div>
-					                                        <div class="for-log">
-                        <div class="forgot">
-                            <a href="index8083.html?a=forgot_password">Forgot Password ?</a>
+					<!----
+                                        <div class="captchabox">
+                        <div class="captchabg">
+                            <p><img style="width:50%;padding:13px;" src="?a=show_validation_image&PHPSESSID=ujdvpdibi7s13panrkl77h82m5&rand=862978472"></p>
                         </div>
+                        <div style="    width: 260px;" class="captcha_type">
+                            <input style="    width: 95%;" type="text" name=validation_number>
+                        </div>
+                    </div>---->
+                                        <div class="for-log">
                         <div class="login">
-                            <input type="submit" value="LOG IN NOW">
+                            <input type="submit" value="SEND NOW">
                         </div>
                    </div>
                 </div>
             </div>
-</form>
 
+</form>
 </div>
 </div><div id="footer">
         <div id="sub_footer">
@@ -167,12 +154,12 @@ function checkform() {
             </div>
             <div class="fo-menu">
                 <ul>
-                    <li><a href="index.html?a=home">  home</a></li>
-                    <li><a href="about.html?a=cust&amp;page=about-us">  about us</a></li>
-                    <li><a href="news.html?a=news">  news</a></li>
-                    <li><a href="faq.html?a=faq">  f.a.q</a></li>
-                    <li><a href="rules.html?a=rules">  terms &amp; Condition</a></li>
-                    <li><a href="contactus.html?a=support">  support</a></li>
+                    <li><a href="/">  home</a></li>
+                    <li><a href="/about">  about us</a></li>
+                    <li><a href="/news">  news</a></li>
+                    <li><a href="/faq">  f.a.q</a></li>
+                    <li><a href="/rules">  terms &amp; Condition</a></li>
+                    <li><a href="/contactus">  support</a></li>
                 </ul>
             </div>
             <div class="copyright">
@@ -182,5 +169,5 @@ function checkform() {
     </div>
 </body>
 
-<!-- Mirrored from flixtrade.co/?a=login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Mar 2021 04:19:27 GMT -->
+<!-- Mirrored from flixtrade.co/?a=forgot_password by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Mar 2021 04:19:45 GMT -->
 </html>

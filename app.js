@@ -1,13 +1,14 @@
 const express = require('express');
 const path = require('path');
+const expressLayouts = require('express-ejs-layouts');
 
-// const bodyParser = require('body-parser');
+require('dotenv').config();
 const flash = require('connect-flash');
 const session = require('express-session');
 const mongoose = require('mongoose');
-const User = require('./models/User');
-const bcrypt = require('bcryptjs');
 const passport = require('passport');
+
+const app = express(); 
 
 // Passport config
 require('./config/passport')(passport);
@@ -20,7 +21,10 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreat
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
 
-const app = express();
+
+// EJS Engine setup
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
 
 // Bodyparser
 app.use(express.urlencoded({ extended: false }));
@@ -39,95 +43,29 @@ app.use(passport.session());
 // Connect flash
 app.use(flash());
 
-// app.use('/', express.static(path.join(__dirname, 'flixtrade.co')))
-app.use(express.static('./flixtrade.co'))
-
-
-
-// app.get('/', (req,res) => {
-//     res.send("Welcome")
-// })
-
-app.post('/user_create', async (req, res) => {
-    // console.log("POST Request Called")
-    const {
-        name, 
-        username, 
-        email, 
-        emailcheck, 
-        password, 
-        passwordcheck, 
-        secretquestion, 
-        secretanswer, 
-        wallet 
-       } = req.body;
-    // res.end()
-
-      // Validation passed
-      User.findOne({ email: email })
-      .then(user => {
-          if(user) {
-              // User exist
-              errors.push({ msg: 'Email is already registered' })
-              res.render('user_create', {
-                errors,
-                name, 
-                username, 
-                email, 
-                emailcheck, 
-                password, 
-                passwordcheck, 
-                secretquestion, 
-                secretanswer, 
-                wallet                 
-            });                        
-          } else {
-                const newUser = new User({
-                    name, 
-                    username, 
-                    email, 
-                    password,
-                    secretquestion, 
-                    secretanswer, 
-                    wallet       
-                });
-
-            // Hash Password
-            bcrypt.genSalt(10, (err, salt) => 
-                bcrypt.hash(newUser.password, salt, (err, hash) => {
-                    if(err) throw err;
-                    // Set password to hashed
-                    newUser.password = hash;
-                    // Save user
-                    newUser.save()
-                    .then(user => {
-                        req.flash('success_msg', 'You are now registered and can login');
-                        res.redirect('/login.html');
-                    })
-                    .catch(err => console.log(err));
-            }) )  
-          }
-      });
+// Global vars
+app.use((req, res, next) =>{
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
 })
 
-// Login Handle
-app.post('/login', (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/dashboard.html',
-        failureRedirect: '/login.html',
-        failureFlash: true
-    })(req, res, next);
-});
+// Routes
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
-// Logout 
-app.get('/logout', (req, res) => {
-    req.logout();
-    req.flash('success_msg', 'You are logged out');
-    res.redirect('/users/login');
-});
+// Static Files
+app.use(express.static('views'));
+app.use('/users', express.static('views'));
+app.use(express.static('views/user'));
+// app.use('/users', express.static('views/images'))
+// app.use('/users', express.static('views/js'))
+
 
 const PORT = process.env.PORT || 9999;
 
 app.listen(PORT, () => {
     console.log(`Server up at ${PORT}`)
 })
+
