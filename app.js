@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
-
+const MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -31,7 +31,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // Express Session 
 app.use(session({
-    secret: 'secret', 
+    secret: process.env.SESSION_SECRET, 
+    store: new MongoStore(options),
     resave: true,
     saveUninitialized: true
 }));
