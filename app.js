@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+
 // const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -125,7 +126,8 @@ app.get('/logout', (req, res) => {
     res.redirect('/users/login');
 });
 
+const PORT = process.env.PORT || 9999;
 
-app.listen(9999, () => {
-    console.log('Server up at 9999')
+app.listen(PORT, () => {
+    console.log(`Server up at ${PORT}`)
 })
