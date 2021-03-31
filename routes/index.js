@@ -16,7 +16,7 @@ router.get('/rules', (req, res) => res.render('rules'));
 // Dashboard
 router.get('/account', ensureAuthenticated, (req, res) => 
 res.render('a=account', {
-    name: req.user.name
+    username: req.user.username
 }));
 
 module.exports = router;  
