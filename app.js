@@ -4,11 +4,9 @@ const expressLayouts = require('express-ejs-layouts');
 
 require('dotenv').config();
 const flash = require('connect-flash');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
-
-const session = require('express-session')
-const MongoStore = require('connect-mongo')(session);
 
 const app = express(); 
 
@@ -32,15 +30,10 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
 // Express Session 
-app.set('trust proxy', 1);
 app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    unset: 'destroy',
-        cookie: { secure: true,
-                maxAge:  6*60*60*1000 },
-        store: new MongoStore({ mongooseConnection: mongoose.connection })
+    secret: 'secret', 
+    resave: true,
+    saveUninitialized: true
 }));
 
 // Passport middleware 
@@ -65,12 +58,13 @@ app.use('/users', require('./routes/users'));
 // Static Files
 app.use(express.static('views'));
 app.use('/users', express.static('views'));
-app.use(express.static('views/user'));
 // app.use('/users', express.static('views/images'))
 // app.use('/users', express.static('views/js'))
 
 
-app.listen(process.env.PORT || 9999, () => {
-    console.log(`Server up at 9999`)
+const PORT = process.env.PORT || 9999;
+
+app.listen(PORT, () => {
+    console.log(`Server up at ${PORT}`)
 })
 

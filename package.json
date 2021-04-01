@@ -1,9 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "engines": {
-    "node": "14.16.0"
-  },
   "description": "Bitcoin investment website ",
   "main": "app.js",
   "scripts": {
@@ -28,5 +25,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "14.16.0"
   }
 }
