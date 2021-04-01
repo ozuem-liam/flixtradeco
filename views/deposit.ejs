@@ -1,0 +1,400 @@
+
+<!doctype html>
+<html>
+<head>
+<!----328 Visualhyip.com---->
+<meta charset="utf-8">
+<title>flixtrade.co</title>
+<link rel="shortcut icon" href="images/icon.png">
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<link rel="stylesheet" type="text/css" href="css/dc_accordion_toggle.css"/>
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css">
+<script src='js/jquery-1.11.3.min.js'></script>
+<script src='js/wow.js'></script>
+<script src='js/dc_accordion_toggle.js'></script>
+<script>
+    wow = new WOW();
+    wow.init(); 
+</script>
+</head>
+
+<body>
+    <div id="slider2">
+        <div id="sub_slider">
+            <div class="emial bounceInLeft animated wow"data-wow-duration="2s">
+                <p><i class="far fa-envelope"></i> Email : admin@flixtrade.co</p>
+            </div>
+            <div class="language bounceInUp animated wow"data-wow-duration="2s">
+                
+                <div id="google_translate_element"></div><script type="text/javascript">
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
+                </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                
+            </div>
+            							 <div class="button bounceInRight animated wow"data-wow-duration="2s">
+                                <div class="button_one">
+                    <a href="/users/logout" class="a-link"><i class="fas fa-unlock"></i> Log Out </a>
+                </div>
+                <div class="button_two">
+                    <a href="/account" class="a-link"><i class="fas fa-user-plus"></i> Account  </a>
+                </div>
+                            </div>
+							        </div>
+        <div id="top_header">
+            <div id="sub_top_header">
+                <div class="logo zoomIn animated wow" data-wow-duration="2s">
+                    <a href="/a=home"><img src="/logo.png"></a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/a=home">Home</a></li>
+                        <li><a href="/a=about-us">About Us</a></li>
+                        <li><a href="/a=news">News</a></li>
+                        <li><a href="/a=faq">F.A.Q.</a></li>
+                        <li><a href="/a=rules">Terms And Condition</a></li>
+                        <li><a href="/a=contactus">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f2e4ed2ed9d9d26270923f0/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+        
+<div id="sub_slid">
+             <div class="headline">
+                 <p>Make Deposit</p>
+            </div>
+         </div>
+    </div>
+    <div id="others">
+        <div id="sub_others">
+<div class="desh_menu">
+   <ul>
+       <li><a href="/account">Account</a></li>
+       <li><a href="/a=deposit">Deposit</a></li>
+       <li><a href="/a=withdraw">Withdraw</a></li>
+       <li><a href="/a=deposit_list">Deposit List</a></li>
+       <li><a href="/a=withdraw_history">Withdraw History</a></li>
+       <li><a href="/a=earnings">History</a></li>
+       <li><a href="/a=security">Settings</a></li>
+       <li><a href="/a=edit_account">Edit Account</a></li>
+       <li><a href="/a=referals">Referral</a></li>
+       <li><a href="/a=referallinks">Referral Links</a></li>
+       <li><a href="/users/logout">Log Out</a></li>
+   </ul>
+</div>
+
+
+
+
+<script language="javascript">
+function openCalculator(id)
+{
+
+  w = 225; h = 400;
+  t = (screen.height-h-30)/2;
+  l = (screen.width-w-30)/2;
+  window.open('?a=calendar&type=' + id, 'calculator' + id, "top="+t+",left="+l+",width="+w+",height="+h+",resizable=1,scrollbars=0");
+
+
+  
+  for (i = 0; i < document.spendform.h_id.length; i++)
+  {
+    if (document.spendform.h_id[i].value == id)
+    {
+      document.spendform.h_id[i].checked = true;
+    }
+  }
+
+  
+
+}
+
+function updateCompound() {
+  var id = 0;
+  var tt = document.spendform.h_id.type;
+  if (tt && tt.toLowerCase() == 'hidden') {
+    id = document.spendform.h_id.value;
+  } else {
+    for (i = 0; i < document.spendform.h_id.length; i++) {
+      if (document.spendform.h_id[i].checked) {
+        id = document.spendform.h_id[i].value;
+      }
+    }
+  }
+
+  var cpObj = document.getElementById('compound_percents');
+  if (cpObj) {
+    while (cpObj.options.length != 0) {
+      cpObj.options[0] = null;
+    }
+  }
+
+  if (cps[id] && cps[id].length > 0) {
+    document.getElementById('coumpond_block').style.display = '';
+
+    for (i in cps[id]) {
+      cpObj.options[cpObj.options.length] = new Option(cps[id][i]);
+    }
+  } else {
+    document.getElementById('coumpond_block').style.display = 'none';
+  }
+}
+var cps = {};
+</script>
+
+
+
+
+
+<form method=post name="spendform"><input type="hidden" name="form_id" value="16172709903333"><input type="hidden" name="form_token" value="02fa0d4808244ba5d6e9355bf145c4f5">
+<input type=hidden name=a value=deposit>
+            
+             <div class="plan_select">
+                <p>Select A Plan</p>
+            </div>
+            
+            <div class="deposit_planall">
+                <div class="plan_onea">
+                    <div class="plan_boxa">
+                        <div class="plan_i">
+                            <img src="images/amount.png">
+                        </div>
+                        <div class="plan_amount">
+                            <div class="percent">
+                                <p>20%</p>
+                            </div>
+                            <div class="profit">
+                                <p>Profit</p>
+                            </div>
+                        </div>
+                        <div class="daily">
+                            <p>After 1 Day</p>
+                        </div>
+                        <div class="min_max">
+                            <div class="min_one">
+                                <p>Minimum :      <span>$30.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p>Maximum :      <span>$499.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p style="text-align: center;">Principal Return</p>
+                            </div>
+                        </div>
+                        <div class="checintext">
+                            <div class="check-in">
+                                <input type="radio" name="h_id" value="5" checked="">
+                            </div>
+                            <div class="check_tittle">Select</div>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="plan_onea">
+                    <div class="plan_boxa">
+                        <div class="plan_i">
+                            <img src="images/amount.png">
+                        </div>
+                        
+                        <div class="plan_amount">
+                            <div class="percent">
+                                <p>50%</p>
+                            </div>
+                            <div class="profit">
+                                <p>Profit</p>
+                            </div>
+                        </div>
+                        <div class="daily">
+                            <p>After 2 Days</p>
+                        </div>
+                        
+                        <div class="min_max">
+                            <div class="min_one">
+                                <p>Minimum :      <span>      $500.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p>Maximum :      <span>      $999.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p style="text-align: center;">Principal Included</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checintext">
+                            <div class="check-in">
+                                <input type="radio" name="h_id" value="6">
+                            </div>
+                            <div class="check_tittle">Select</div>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="plan_onea">
+                    <div class="plan_boxa">
+                        <div class="plan_i">
+                            <img src="images/amount.png">
+                        </div>
+                        
+                        <div class="plan_amount">
+                            <div class="percent">
+                                <p>80%</p>
+                            </div>
+                            <div class="profit">
+                                <p>Profit</p>
+                            </div>
+                        </div>
+                        <div class="daily">
+                            <p>After 3 DAYS</p>
+                        </div>
+                        
+                        <div class="min_max">
+                            <div class="min_one">
+                                <p>Minimum :      <span>      $1000.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p>Maximum :      <span>      $100000.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p style="text-align: center;">Principal Included</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checintext">
+                            <div class="check-in">
+                                <input type="radio" name="h_id" value="7">
+                            </div>
+                            <div class="check_tittle">Select</div>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="plan_onea">
+                    <div class="plan_boxa">
+                        <div class="plan_i">
+                            <img src="images/amount.png">
+                        </div>
+                        
+                        <div class="plan_amount">
+                            <div class="percent">
+                                <p>100%</p>
+                            </div>
+                            <div class="profit">
+                                <p>Profit</p>
+                            </div>
+                        </div>
+                        <div class="daily">
+                            <p>After 5 Days</p>
+                        </div>
+                        
+                        <div class="min_max">
+                            <div class="min_one">
+                                <p>Minimum :      <span>      $5000.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p>Maximum :      <span>      $500000.00</span></p>
+                            </div>
+                            <div class="min_one">
+                                <p style="text-align: center;">Principal Included</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checintext">
+                            <div class="check-in">
+                                <input type="radio" name="h_id" value="8">
+                            </div>
+                            <div class="check_tittle">Select</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="clr"></div>
+            <div class="deposit_box">
+                <div class="other-head-">
+                	<p style="    text-align: left;
+    padding-left: 20px;">Total Balance :     <span>$0.00</span></p>
+                </div>
+                <div class="boxdepost">
+                    <div class="deposit_amount_">
+                        <div class="deposit_tittle_">
+                            <p>Deposit Amount ($):</p>
+                        </div>
+                        <div class="deposit_box_d_">
+                            <div class="deposit_box_type_d">
+                                <input type="text" name=amount value='30.00'>
+                            </div>
+                            <div class="depost_dolar_">
+                                <p>($)</p>
+                            </div>
+                        </div>
+                    </div>
+                                                                                                                                                            
+					                                                                                                                   					 <div class="spend">
+                        <div class="check_payment">
+                            <input type=radio name=type value="process_1006" >
+                        </div>
+                        <div class="spen_left">
+                            <p>Spend funds from Bitcoin</p>
+                        </div>
+                    </div>           <div class="spend_now">
+                        <input type="submit" value="SPEND">
+                     </div>
+                </div>
+            </div>
+
+</form>
+
+
+<script language=javascript>
+for (i = 0; i<document.spendform.type.length; i++) {
+  if ((document.spendform.type[i].value.match(/^process_/))) {
+    document.spendform.type[i].checked = true;
+    break;
+  }
+}
+updateCompound();
+</script>
+
+
+
+ </div>
+</div>
+<div id="footer">
+        <div id="sub_footer">
+            <div class="logof zoomIn animated wow" data-wow-duration="2s">
+                <a href="/a=home"><img src="/logo.png"/></a>
+            </div>
+            <div class="fo-menu">
+                <ul>
+                    <li><a href="/a=home">  home</a></li>
+                    <li><a href="/a=about-us">  about us</a></li>
+                    <li><a href="/a=news">  news</a></li>
+                    <li><a href="/a=faq">  f.a.q</a></li>
+                    <li><a href="/a=rules">  terms &amp; Condition</a></li>
+                    <li><a href="/a=contactus">  support</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>Copyright 2020 &copy; flixtrade.co All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

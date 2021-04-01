@@ -15,7 +15,7 @@ router.get('/register', (req, res) => res.render('register'));
 
 // Register Handle
 router.post('/register', (req, res) => {
-    console.log('it worked');
+    // console.log('it worked');
     const {
          name, 
          username, 

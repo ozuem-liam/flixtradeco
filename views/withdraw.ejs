@@ -1,13 +1,14 @@
+
 <!doctype html>
 <html>
 <head>
 <!----328 Visualhyip.com---->
 <meta charset="utf-8">
 <title>flixtrade.co</title>
-<link rel="shortcut icon" href="/images/icon.png">
-<link rel="stylesheet" type="text/css" href="../css/style.css"/>
-<link rel="stylesheet" type="text/css" href="../css/animate.css"/>
-<link rel="stylesheet" type="text/css" href="../css/dc_accordion_toggle.css"/>
+<link rel="shortcut icon" href="images/icon.png">
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<link rel="stylesheet" type="text/css" href="css/dc_accordion_toggle.css"/>
 <link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css">
 <link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css">
 <script src='js/jquery-1.11.3.min.js'></script>
@@ -46,7 +47,7 @@
         <div id="top_header">
             <div id="sub_top_header">
                 <div class="logo zoomIn animated wow" data-wow-duration="2s">
-                    <a href="/a=home"><img src="../logo.png"></a>
+                    <a href="/a=home"><img src="/logo.png"></a>
                 </div>
                 <div class="menu">
                     <ul>
@@ -77,7 +78,7 @@ s0.parentNode.insertBefore(s1,s0);
         
 <div id="sub_slid">
              <div class="headline">
-                 <p>Accont Overview</p>
+                 <p>Ask for withdrawal</p>
             </div>
          </div>
     </div>
@@ -99,114 +100,76 @@ s0.parentNode.insertBefore(s1,s0);
    </ul>
 </div>
 
+ <br>
 
-            
-            <div class="balances">
-                <div class="balance_box">
-                      <div class="invest-acleft">
-                        <div class="invest-down">
-                            <div class="tabcontent">
-                                <div class="earn_box">
-                                    <div class="earn_amount">
-                                        <p><img src="images/ta.png"> Account Balance : <span>$<b>0.00</b></span></p>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="balance_boxr">
-                    <div class="invest-acleft">
-                        <div class="invest-down">
-                            <div class="tabcontent_box">
-                                <div class="earn_box">
-                                    <div class="earn_amount">
-                                        <p><img src="images/te.png"> Earned Total : <span>$<b>0.00</b></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
+
+
+<form method=post><input type="hidden" name="form_id" value="16172712626550"><input type="hidden" name="form_token" value="1dded17a172b90fde6b5cb5c73b22294">
+<input type=hidden name=a value=withdraw>
+<input type=hidden name=action value=preview>
+<input type=hidden name=say value="">
+
+
+
+ <div class="withdraw_mid">
+                <div class="earn_boxa">
+                    <div class="earn_amount">
+                        <p><img src="images/ta.png"> Total Balance : <span>$<b>0.00</b></span></p>
                     </div>
                 </div>
+                <div class="earn_boxa">
+                    <div class="earn_amount">
+                        <p><img src="images/te.png"> Pending Withdraw : <span>$<b></b></span></p>
+                    </div>
+                 </div>
             </div>
-            
-            <div class="desh_usere">
-                <div class="duser">
-                    <img src="images/duser.png">
-                </div>
-                <div class="user-details">
-                    <div class="details-one">
-                        <div class="details-left">
-                            <p>Username : </p>
-                        </div>
-                        <div class="details-right">
-                            <p><%= username %></p>
-                        </div>
-                    </div>
-                    <div class="details-one">
-                        <div class="details-left">
-                            <p>Registation Date : </p>
-                        </div>
-                        <div class="details-right">
-                            <p>Mar-26-2021</p>
-                        </div>
-                    </div>
-                    <div class="details-one">
-                        <div class="details-left">
-                            <p>Last Access :   </p>
-                        </div>
-                        <div class="details-right">
-                            <p><%= date %></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="refer_right">
-                    <div class="refer_tittle">
-                        <p>Your Referral Link :</p>
-                    </div>
-                    <div class="refer_link">
-                        <p>https://flixtrade.co//?ref=<%= username %></p>
-                    </div>
-                </div>
+			
+			 <div class="withdraw_head">
+                <p>Account details</p>
             </div>
-            
-            <div class="details_down">
-                <div class="details_left">
-                    <div class="other-head-">
-                        <p style="text-align:center;">Deposit History</p>
+ <div class="withdraw_boxa">
+ <!----
+  <div class="processing-head">
+                    <div class="propartone">
+                        <p>Processing</p>
                     </div>
-                    <div class="deposit_left">
-                        <div class="in_one">
-                            <p>Total Deposit :     <span>$<b>0.00</b></span></p>
-                        </div>
-                        <div class="in_one">
-                            <p>Active Deposit :     <span>$<b>0.00</b></span></p>
-                        </div>
-                        <div class="in_one">
-                            <p>Last Deposit :     <span>$<b>N/A</b></span></p>
-                        </div>
+                    <div class="proparttwo">
+                        <p>Available</p>
+                    </div>
+                    <div class="propartthree">
+                        <p>Pending</p>
+                    </div>
+                    <div class="propartfour">
+                        <p>Account</p>
                     </div>
                 </div>
-                <div class="details_left">
-                    <div class="other-head-">
-                        <p style="text-align:center;">Withdraw History</p>
-                    </div>
-                    <div class="deposit_left">
-                        <div class="in_one">
-                            <p>Total Withdraw :     <span>$<b>0.00</b></span></p>
-                        </div>
-                        <div class="in_one">
-                            <p>Pending Withdraw :     <span>$<b>0.00</b></span></p>
-                        </div>
-                        <div class="in_one">
-                            <p>Last Withdraw :     <span>$<b>N/A</b></span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+				---->
+				<div class="processing_down">
+<table cellspacing=0 cellpadding=2 border=0>
+ <tr>
+ <th></th>
+ <th>Processing</th>
+ <th>Available</th>
+ <th>Pending</th>
+ <th>Account</th>
+</tr> 
+<tr>
+ <td></td>
+ <td><img src="images/1006.gif" width=44 height=17 align=absmiddle> Bitcoin</td>
+ <td><b style="color:green">$0.00</b></td>
+ <td><b style="color:red">$0.00</b></td>
+ <td>Wallet Address: https://flixtrade.co</td>
+</tr>
+</table>
+
+<br><br>
+You have no funds to withdraw.
+</form>
+</div></div>
 
 </div>
 </div>

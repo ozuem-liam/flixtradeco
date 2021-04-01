@@ -1,0 +1,215 @@
+
+<!doctype html>
+<html>
+<head>
+<!----328 Visualhyip.com---->
+<meta charset="utf-8">
+<title>flixtrade.co</title>
+<link rel="shortcut icon" href="images/icon.png">
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<link rel="stylesheet" type="text/css" href="css/dc_accordion_toggle.css"/>
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css">
+<script src='js/jquery-1.11.3.min.js'></script>
+<script src='js/wow.js'></script>
+<script src='js/dc_accordion_toggle.js'></script>
+<script>
+    wow = new WOW();
+    wow.init(); 
+</script>
+</head>
+
+<body>
+    <div id="slider2">
+        <div id="sub_slider">
+            <div class="emial bounceInLeft animated wow"data-wow-duration="2s">
+                <p><i class="far fa-envelope"></i> Email : admin@flixtrade.co</p>
+            </div>
+            <div class="language bounceInUp animated wow"data-wow-duration="2s">
+                
+                <div id="google_translate_element"></div><script type="text/javascript">
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
+                </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                
+            </div>
+            							 <div class="button bounceInRight animated wow"data-wow-duration="2s">
+                                <div class="button_one">
+                    <a href="/users/logout" class="a-link"><i class="fas fa-unlock"></i> Log Out </a>
+                </div>
+                <div class="button_two">
+                    <a href="/account" class="a-link"><i class="fas fa-user-plus"></i> Account  </a>
+                </div>
+                            </div>
+							        </div>
+        <div id="top_header">
+            <div id="sub_top_header">
+                <div class="logo zoomIn animated wow" data-wow-duration="2s">
+                    <a href="/a=home"><img src="/logo.png"></a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/a=home">Home</a></li>
+                        <li><a href="/a=about-us">About Us</a></li>
+                        <li><a href="/a=news">News</a></li>
+                        <li><a href="/a=faq">F.A.Q.</a></li>
+                        <li><a href="/a=rules">Terms And Condition</a></li>
+                        <li><a href="/a=contactus">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f2e4ed2ed9d9d26270923f0/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+        
+<div id="sub_slid">
+             <div class="headline">
+                 <p>Edit Account</p>
+            </div>
+         </div>
+    </div>
+    <div id="others">
+        <div id="sub_others">
+<div class="desh_menu">
+   <ul>
+       <li><a href="/account">Account</a></li>
+       <li><a href="/a=deposit">Deposit</a></li>
+       <li><a href="/a=withdraw">Withdraw</a></li>
+       <li><a href="/a=deposit_list">Deposit List</a></li>
+       <li><a href="/a=withdraw_history">Withdraw History</a></li>
+       <li><a href="/a=earnings">History</a></li>
+       <li><a href="/a=security">Settings</a></li>
+       <li><a href="/a=edit_account">Edit Account</a></li>
+       <li><a href="/a=referals">Referral</a></li>
+       <li><a href="/a=referallinks">Referral Links</a></li>
+       <li><a href="/users/logout">Log Out</a></li>
+   </ul>
+</div>
+
+
+
+
+<script language=javascript>
+function IsNumeric(sText) {
+  var ValidChars = "0123456789.";
+  var IsNumber=true;
+  var Char;
+  if (sText == '') return false;
+  for (i = 0; i < sText.length && IsNumber == true; i++) { 
+    Char = sText.charAt(i); 
+    if (ValidChars.indexOf(Char) == -1) {
+      IsNumber = false;
+    }
+  }
+  return IsNumber;
+}
+
+function checkform() {
+  if (document.editform.fullname.value == '') {
+    alert("Please type your full name!");
+    document.editform.fullname.focus();
+    return false;
+  }
+
+
+  if (document.editform.password.value != document.editform.password2.value) {
+    alert("Please check your password!");
+    document.editform.fullname.focus();
+    return false;
+  }
+
+
+
+
+  if (document.editform.email.value == '') {
+    alert("Please enter your e-mail address!");
+    document.editform.email.focus();
+    return false;
+  }
+
+
+  return true;
+}
+</script>
+
+
+ <br>
+<form action="index.php" method=post onsubmit="return checkform()" name=editform><input type="hidden" name="form_id" value="16172726125781"><input type="hidden" name="form_token" value="500c63545d95e3bceaf4bf35e061dec2">
+<input type=hidden name=a value=edit_account>
+<input type=hidden name=action value=edit_account>
+<table cellspacing=0 cellpadding=2 border=0>
+<tr>
+ <td>Account Name:</td>
+ <td><input type=text value='<%= username %>' disabled class=inpts size=30>
+ </td>
+</tr><tr>
+ <td>Registration date:</td>
+ <td><input type=text value='<%= date %>' disabled class=inpts size=30>
+ </td>
+</tr><tr>
+ <td>Your Full Name:</td>
+ <td><input type=text name=fullname value='<%= fullname %>' class=inpts size=30>
+</tr>
+
+<tr>
+ <td>New Password:</td>
+ <td><input type=password name=password value="" class=inpts size=30></td>
+</tr><tr>
+ <td>Retype Password:</td>
+ <td><input type=password name=password2 value="" class=inpts size=30></td>
+</tr>
+<tr>
+ <td>Your Bitcoin Wallet Address:</td>
+ <td><input type=text class=inpts size=30 name="pay_account[1006][Wallet Address]" value="<%= wallet %>"></td>
+</tr>
+<tr>
+ <td>Your E-mail address:</td>
+ <td><input type=text name=email value='<%= email %>' class=inpts size=30></td>
+</tr>
+
+
+<tr>
+ <td>&nbsp;</td>
+ <td><input type=submit value="Change Account data" class=sbmt></td>
+</tr></table>
+</form>
+
+</div>
+</div>
+<div id="footer">
+        <div id="sub_footer">
+            <div class="logof zoomIn animated wow" data-wow-duration="2s">
+                <a href="/a=home"><img src="/logo.png"/></a>
+            </div>
+            <div class="fo-menu">
+                <ul>
+                    <li><a href="/a=home">  home</a></li>
+                    <li><a href="/a=about-us">  about us</a></li>
+                    <li><a href="/a=news">  news</a></li>
+                    <li><a href="/a=faq">  f.a.q</a></li>
+                    <li><a href="/a=rules">  terms &amp; Condition</a></li>
+                    <li><a href="/a=contactus">  support</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>Copyright 2020 &copy; flixtrade.co All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
