@@ -70,9 +70,7 @@ app.use(express.static('views/user'));
 // app.use('/users', express.static('views/js'))
 
 
-const PORT = process.env.PORT || 9999;
-
-app.listen(PORT, () => {
-    console.log(`Server up at ${PORT}`)
+app.listen(process.env.PORT || 9999, () => {
+    console.log(`Server up at 9999`)
 })
 
