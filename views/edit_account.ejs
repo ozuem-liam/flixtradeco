@@ -148,9 +148,11 @@ function checkform() {
 
 
  <br>
-<form action="index.php" method=post onsubmit="return checkform()" name=editform><input type="hidden" name="form_id" value="16172726125781"><input type="hidden" name="form_token" value="500c63545d95e3bceaf4bf35e061dec2">
-<input type=hidden name=a value=edit_account>
-<input type=hidden name=action value=edit_account>
+<form action="/users/a=edit_account/<%= userId %>" method="POST" onsubmit="return checkform()" name=editform>
+<!-- <input type="hidden" name="form_id" value="16172726125781">
+<input type="hidden" name="form_token" value="500c63545d95e3bceaf4bf35e061dec2"> -->
+<!-- <input type=hidden name=a value=edit_account>
+<input type=hidden name=action value=edit_account> -->
 <table cellspacing=0 cellpadding=2 border=0>
 <tr>
  <td>Account Name:</td>
@@ -162,7 +164,7 @@ function checkform() {
  </td>
 </tr><tr>
  <td>Your Full Name:</td>
- <td><input type=text name=fullname value='<%= fullname %>' class=inpts size=30>
+ <td><input type=text name=name value='<%= name %>' class=inpts size=30>
 </tr>
 
 <tr>
@@ -174,7 +176,7 @@ function checkform() {
 </tr>
 <tr>
  <td>Your Bitcoin Wallet Address:</td>
- <td><input type=text class=inpts size=30 name="pay_account[1006][Wallet Address]" value="<%= wallet %>"></td>
+ <td><input type=text class=inpts size=30 name="wallet" value="<%= wallet %>"></td>
 </tr>
 <tr>
  <td>Your E-mail address:</td>

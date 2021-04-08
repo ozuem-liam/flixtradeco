@@ -5,12 +5,19 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "rollup -c"
   },
   "author": "Williams Ozuem",
   "license": "ISC",
   "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/mongoose": "^1.1.0",
+    "admin-bro": "^3.4.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "bitcore-explorers": "^1.0.1",
+    "bitcore-lib": "^8.25.7",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
@@ -18,15 +25,20 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
+    "express-formidable": "^1.2.0",
     "express-session": "^1.17.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.12.3",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "tslib": "^2.2.0"
   },
   "engines": {
     "node": "14.16.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.44.0"
   }
 }

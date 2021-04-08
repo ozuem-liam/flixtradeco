@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const adminRouter = require('./routes/admin.router')
 
 const app = express(); 
 
@@ -54,14 +55,16 @@ app.use((req, res, next) =>{
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+app.use('/admin', adminRouter);
 
 // Static Files
 app.use(express.static('views'));
 app.use('/users', express.static('views'));
-// app.use('/users', express.static('views/images'))
-// app.use('/users', express.static('views/js'))
 
+// rollup config
+const sayHello = require('./modules/MyModule');
 
+sayHello('Hello from Rollup');
 const PORT = process.env.PORT || 9999;
 
 app.listen(PORT, () => {

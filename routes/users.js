@@ -121,12 +121,60 @@ router.post('/login', (req, res, next) => {
     })(req, res, next);
 });
 
+// Update Handle
+// router.post('/login', (req, res, next) => {
+//     User.updateOne
+//     })
+// });
+
 // Logout 
 router.get('/logout', (req, res) => {
     req.logout();
     req.flash('success_msg', 'You are logged out');
     res.redirect('/users/login');
 });
+
+
+
+// Load User edit form
+router.get('/a=edit_account/:id', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        res.render('a=edit_account', {
+            user:user
+        });
+    });
+});
+
+// Update submit POST Route
+router.post('/a=edit_account/:id', (req,res) => {
+    let user = {};
+    user.name = req.body.name;
+    user.password = req.body.password;
+    user.wallet = req.body.wallet;
+    user.email = req.body.email;
+
+    let query = {_id:req.params.id}
+    
+    // Hash Password
+    bcrypt.genSalt(10, (err, salt) => 
+    bcrypt.hash(user.password, salt, (err, hash) => {
+        if(err) throw err;
+        // Set password to hashed
+        user.password = hash;
+         // update user
+        User.updateOne(query, user, function(err) {
+            if(err){
+                console.log(err); 
+                 return; 
+            } else {
+                res.redirect('/account')
+            }
+
+    });
+  }) );
+});
+
+
 
 module.exports = router;
 
