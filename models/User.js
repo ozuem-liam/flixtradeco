@@ -32,6 +32,19 @@ const UserSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
+    totalDeposit: {
+        type: Number,
+        default: 0
+    },
+    depositHistory: [],
+    amount: {
+        type: Number,
+        default: 0
     }
 })
 

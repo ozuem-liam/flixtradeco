@@ -102,71 +102,77 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 
-
+<!-- <script type="text/javascript" src="../index.js"></script> -->
 <script language="javascript">
-function openCalculator(id)
-{
+// function openCalculator(id)
+// {
 
-  w = 225; h = 400;
-  t = (screen.height-h-30)/2;
-  l = (screen.width-w-30)/2;
-  window.open('?a=calendar&type=' + id, 'calculator' + id, "top="+t+",left="+l+",width="+w+",height="+h+",resizable=1,scrollbars=0");
+//   w = 225; h = 400;
+//   t = (screen.height-h-30)/2;
+//   l = (screen.width-w-30)/2;
+//   window.open('?a=calendar&type=' + id, 'calculator' + id, "top="+t+",left="+l+",width="+w+",height="+h+",resizable=1,scrollbars=0");
 
-
-  
-  for (i = 0; i < document.spendform.h_id.length; i++)
-  {
-    if (document.spendform.h_id[i].value == id)
-    {
-      document.spendform.h_id[i].checked = true;
-    }
-  }
 
   
+//   for (i = 0; i < document.spendform.h_id.length; i++)
+//   {
+//     if (document.spendform.h_id[i].value == id)
+//     {
+//       document.spendform.h_id[i].checked = true;
+//     }
+//   }
 
-}
+  
 
-function updateCompound() {
-  var id = 0;
-  var tt = document.spendform.h_id.type;
-  if (tt && tt.toLowerCase() == 'hidden') {
-    id = document.spendform.h_id.value;
-  } else {
-    for (i = 0; i < document.spendform.h_id.length; i++) {
-      if (document.spendform.h_id[i].checked) {
-        id = document.spendform.h_id[i].value;
-      }
-    }
-  }
+// }
 
-  var cpObj = document.getElementById('compound_percents');
-  if (cpObj) {
-    while (cpObj.options.length != 0) {
-      cpObj.options[0] = null;
-    }
-  }
+// function updateCompound() {
+//   var id = 0;
+//   var tt = document.spendform.h_id.type;
+//   if (tt && tt.toLowerCase() == 'hidden') {
+//     id = document.spendform.h_id.value;
+//   } else {
+//     for (i = 0; i < document.spendform.h_id.length; i++) {
+//       if (document.spendform.h_id[i].checked) {
+//         id = document.spendform.h_id[i].value;
+//       }
+//     }
+//   }
 
-  if (cps[id] && cps[id].length > 0) {
-    document.getElementById('coumpond_block').style.display = '';
+//   var cpObj = document.getElementById('compound_percents');
+//   if (cpObj) {
+//     while (cpObj.options.length != 0) {
+//       cpObj.options[0] = null;
+//     }
+//   }
 
-    for (i in cps[id]) {
-      cpObj.options[cpObj.options.length] = new Option(cps[id][i]);
-    }
-  } else {
-    document.getElementById('coumpond_block').style.display = 'none';
-  }
-}
-var cps = {};
+//   if (cps[id] && cps[id].length > 0) {
+//     document.getElementById('coumpond_block').style.display = '';
+
+//     for (i in cps[id]) {
+//       cpObj.options[cpObj.options.length] = new Option(cps[id][i]);
+//     }
+//   } else {
+//     document.getElementById('coumpond_block').style.display = 'none';
+//   }
+// }
+// var cps = {};
+// function passvalues() {
+//     const amount = document.getElementById("amount").value;
+//     localStorage.setItem("textvalue", amount);
+//     return false;
+// }
 </script>
 
 
 
 
 
-<form method=post name="spendform">
-    <input type="hidden" name="form_id" value="16172709903333">
+<!-- <form action="/a=deposit=1" method=post name="spendform"> -->
+<form action="/users/deposit" method="POST">
+    <!-- <input type="hidden" name="form_id" value="16172709903333">
     <input type="hidden" name="form_token" value="02fa0d4808244ba5d6e9355bf145c4f5">
-    <input type=hidden name=a value=deposit>
+    <input type=hidden name=a value=deposit> -->
             
              <div class="plan_select">
                 <p>Select A Plan</p>
@@ -241,7 +247,7 @@ var cps = {};
                         
                         <div class="checintext">
                             <div class="check-in">
-                                <input type="radio" name="h_id" value="6">
+                                <input type="radio" name="h_id" value="6" checked>
                             </div>
                             <div class="check_tittle">Select</div>
                         </div>
@@ -340,7 +346,7 @@ var cps = {};
                         </div>
                         <div class="deposit_box_d_">
                             <div class="deposit_box_type_d">
-                                <input type="text" name=amount value='30.00'>
+                                <input type="text" name="amount" id="amount" value='30.00'>
                             </div>
                             <div class="depost_dolar_">
                                 <p>($)</p>
@@ -365,13 +371,13 @@ var cps = {};
 
 
 <script language=javascript>
-for (i = 0; i<document.spendform.type.length; i++) {
-  if ((document.spendform.type[i].value.match(/^process_/))) {
-    document.spendform.type[i].checked = true;
-    break;
-  }
-}
-updateCompound();
+// for (i = 0; i<document.spendform.type.length; i++) {
+//   if ((document.spendform.type[i].value.match(/^process_/))) {
+//     document.spendform.type[i].checked = true;
+//     break;
+//   }
+// }
+// updateCompound();
 </script>
 
 

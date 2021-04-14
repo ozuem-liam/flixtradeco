@@ -71,3 +71,4 @@ app.listen(PORT, () => {
     console.log(`Server up at ${PORT}`)
 })
 
+// Checkbox value page rendar

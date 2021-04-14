@@ -154,7 +154,6 @@ router.post('/a=edit_account/:id', (req,res) => {
     user.email = req.body.email;
 
     let query = {_id:req.params.id}
-    
     // Hash Password
     bcrypt.genSalt(10, (err, salt) => 
     bcrypt.hash(user.password, salt, (err, hash) => {
@@ -175,7 +174,33 @@ router.post('/a=edit_account/:id', (req,res) => {
 });
 
 
+router.get('/deposit', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        res.render('a=deposit=1', {
+            user:user
+        }); 
+    });
+});
 
+router.post('/deposit',  (req, res) => {
+    let user = {};
+    user.amount = req.body.amount;
+
+    let query = {_id:req.user._id};
+    console.log(query, user.amount);
+   User.updateOne(query, user, function(err) {
+            if(err){
+                console.log(err); 
+                 return; 
+            } else {
+                res.redirect('/a=deposit=1')
+            }
+ })
+});
+
+// getById(id) {
+//     return TransactionDoc.findOneById(id).exec().then(t => cleanTransaction(t));
+//   }
 module.exports = router;
 
 
