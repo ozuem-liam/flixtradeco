@@ -188,8 +188,9 @@ router.post('/deposit', async (req, res) => {
 
     // let query = { _id: req.user._id };
     try {
-        const newUser = await User.findByIdAndUpdate(req.user.id, user)
         user.amount = req.body.amount;
+        await User.findByIdAndUpdate(req.user.id, user)
+
         res.redirect('/a=deposit=1')
     } catch (err) {
         res.redirect('back')
